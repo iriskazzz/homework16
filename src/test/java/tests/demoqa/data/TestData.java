@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
 import static java.lang.String.format;
@@ -19,7 +20,7 @@ public class TestData {
   public static List<String> genders = List.of("Male", "Female", "Other");
   public static List<String> years = List.of("1990", "1995", "2000");
   public static List<String> months = Stream.of(getInstance().getDisplayNames(MONTH, LONG, ENGLISH).keySet().toArray())
-          .map(e -> ((String) e)).toList();
+          .map(e -> ((String) e)).collect(Collectors.toList());
   public static List<String> subjects = List.of("Maths", "Accounting", "English");
   public static List<String> hobbies = List.of("Sports", "Reading", "Music");
   public static String firstName = faker.name().firstName(),
