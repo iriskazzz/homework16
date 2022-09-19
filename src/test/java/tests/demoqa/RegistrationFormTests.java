@@ -38,7 +38,7 @@ public class RegistrationFormTests extends TestBase {
     step("Check form results", () -> {
       registrationFormPage.checkResultTable()
               .checkResult("Student Name", fullName)
-              .checkResult("Student Email", "email")
+              .checkResult("Student Email", "email324")
               .checkResult("Gender", gender)
               .checkResult("Mobile", number)
               .checkResult("Date of Birth", expectedDateOfBirth)
