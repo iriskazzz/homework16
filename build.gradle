@@ -45,4 +45,8 @@ tasks.withType(Test) {
     }
 }
 
-test {}
+task properties_test(type: Test) {
+    useJUnitPlatform{
+        includeTags "properties"
+    }
+}
