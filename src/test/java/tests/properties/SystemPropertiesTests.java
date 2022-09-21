@@ -83,9 +83,11 @@ public class SystemPropertiesTests {
   }
 
   @Test
+  @Feature("Системные настройки")
+  @Story("Проверки значений настроек")
   @Disabled
   @Tag("hello")
-  void simplePropertyTes5() {
+  void simplePropertyTest5() {
     System.out.println("Hello, " + System.getProperty("some_text", "qa.guru"));
 
         /*
