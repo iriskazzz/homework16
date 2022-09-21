@@ -1,17 +1,20 @@
 package tests.properties;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class SystemPropertiesTests {
 
   @Test
+  @Disabled
   void simplePropertyTest() {
     String browserName = System.getProperty("browser");
     System.out.println(browserName); // null
   }
 
   @Test
+  @Disabled
   void simplePropertyTest1() {
     System.setProperty("browser", "opera");
     String browserName = System.getProperty("browser");
@@ -19,12 +22,14 @@ public class SystemPropertiesTests {
   }
 
   @Test
+  @Disabled
   void simplePropertyTes2() {
     String browserName = System.getProperty("browser", "firefox");
     System.out.println(browserName); // firefox
   }
 
   @Test
+  @Disabled
   void simplePropertyTes3() {
     System.setProperty("browser", "opera");
     String browserName = System.getProperty("browser", "firefox");
@@ -32,6 +37,7 @@ public class SystemPropertiesTests {
   }
 
   @Test
+  @Disabled
   @Tag("properties")
   void simplePropertyTes4() {
     String browserName = System.getProperty("browser_name", "firefox");
@@ -62,5 +68,25 @@ public class SystemPropertiesTests {
          */
   }
 
+  @Test
+  @Disabled
+  @Tag("hello")
+  void simplePropertyTes5() {
+    System.out.println("Hello, " + System.getProperty("some_text", "qa.guru"));
 
+        /*
+        gradle clean hello_test
+            Hello, qa.guru
+        gradle clean hello_test -Dsome_text=students
+            Hello, students
+        gradle clean hello_test -Dsome_text=students of qa.guru
+                FAILURE: Build failed with an exception.
+                * What went wrong:
+                Task 'of' not found in root project 'qa_guru_14_11_jenkins'.
+        gradle clean hello_test -Dsome_text="students of qa.guru"
+            Hello, students of qa.guru
+        gradle clean hello_test "-Dsome_text=students of qa.guru"
+            Hello, students of qa.guru
+         */
+  }
 }
