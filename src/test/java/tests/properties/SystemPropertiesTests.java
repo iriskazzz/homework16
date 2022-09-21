@@ -1,18 +1,27 @@
 package tests.properties;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
 import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 public class SystemPropertiesTests {
 
   @Test
+  @Feature("Системные настройки")
+  @Story("Проверки значений настроек")
+  @DisplayName("Проверка на значение браузера")
   void simplePropertyTest() {
     String browserName = System.getProperty("browser");
     System.out.println(browserName); // null
   }
 
   @Test
+  @Feature("Системные настройки")
+  @Story("Проверки значений настроек")
+  @DisplayName("Проверка на значение браузера после его присваения")
   void simplePropertyTest1() {
     System.setProperty("browser", "opera");
     String browserName = System.getProperty("browser");
@@ -20,12 +29,18 @@ public class SystemPropertiesTests {
   }
 
   @Test
+  @Feature("Системные настройки")
+  @Story("Проверки значений настроек")
+  @DisplayName("Проверка на дефолтное значение браузера")
   void simplePropertyTes2() {
     String browserName = System.getProperty("browser", "firefox");
     System.out.println(browserName); // firefox
   }
 
   @Test
+  @Feature("Системные настройки")
+  @Story("Проверки значений настроек")
+  @DisplayName("Проверка на значение браузера при дефолтном значении и заданном")
   void simplePropertyTes3() {
     System.setProperty("browser", "opera");
     String browserName = System.getProperty("browser", "firefox");
@@ -33,8 +48,11 @@ public class SystemPropertiesTests {
   }
 
   @Test
+  @Feature("Системные настройки")
+  @Story("Проверки значений настроек")
   @Disabled
   @Tag("properties")
+  @DisplayName("Проверка на атбируты браузера")
   void simplePropertyTes4() {
     String browserName = System.getProperty("browser_name", "firefox");
     String browserVersion = System.getProperty("browser_version", "101");

@@ -1,5 +1,8 @@
 package tests.demoqa;
 
+import io.qameta.allure.Feature;
+import io.qameta.allure.Story;
+import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import tests.demoqa.data.TestData;
 import tests.demoqa.pages.RegistrationFormPage;
@@ -13,6 +16,9 @@ public class RegistrationFormTests extends TestBase {
 
 
   @Test
+  @Feature("Форма регистрации")
+  @Story("Проверка формы регистрации")
+  @DisplayName("Проверка заполнения и вывода анкеты студента")
   void fillPracticeForm() {
     step("Open registrations form", () -> {
       registrationFormPage.openPage();
