@@ -7,14 +7,12 @@ import org.junit.jupiter.api.Test;
 public class SystemPropertiesTests {
 
   @Test
-  @Disabled
   void simplePropertyTest() {
     String browserName = System.getProperty("browser");
     System.out.println(browserName); // null
   }
 
   @Test
-  @Disabled
   void simplePropertyTest1() {
     System.setProperty("browser", "opera");
     String browserName = System.getProperty("browser");
@@ -22,14 +20,12 @@ public class SystemPropertiesTests {
   }
 
   @Test
-  @Disabled
   void simplePropertyTes2() {
     String browserName = System.getProperty("browser", "firefox");
     System.out.println(browserName); // firefox
   }
 
   @Test
-  @Disabled
   void simplePropertyTes3() {
     System.setProperty("browser", "opera");
     String browserName = System.getProperty("browser", "firefox");
